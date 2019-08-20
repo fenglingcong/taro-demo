@@ -1,9 +1,8 @@
 import Taro from '@tarojs/taro'
-import { API_USER, API_USER_LOGIN } from '@constants/api'
-import { promises } from 'dns';
+import { API_USER, API_USER_LOGIN } from '../constants/api'
 
-const CODE_SUCCESS = 200
-const CODE_AUTH_EXPIRED = 600
+const CODE_SUCCESS = '200'
+const CODE_AUTH_EXPIRED = '600'
 
 function getStorage(key) {
   return Taro.getStorage({ key }).then(res => res.data)

@@ -1,52 +1,47 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Button, Text } from '@tarojs/components'
-import Clock from './clock'
+import { View, Text } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
-
-import { add, minus, asyncAdd } from '../../actions/counter'
-
+import * as actions from '../../actions/home'
 import './index.scss'
+import Loading from '@components/loading'
 
+const RECOMMEND_SIZE = 20
 
-@connect(({ counter }) => ({
-  counter
-}), (dispatch) => ({
-  add () {
-    dispatch(add())
-  },
-  dec () {
-    dispatch(minus())
-  },
-  asyncAdd () {
-    dispatch(asyncAdd())
-  }
-}))
-
+@connect(state => state.home, { ...actions })
 class Home extends Component {
-
   config = {
     navigationBarTitleText: '首页'
   }
 
-  componentWillReceiveProps (nextProps) {
-    console.log(this.props, nextProps)
+  state = {
+    loaded: false,
+    loading: false,
+    lastItemId: 0,
+    hasMore: true
   }
 
-  componentWillUnmount () { }
+  componentDidMount() {
+    Taro.showToast({
+      title: '欢迎回来',
+      icon: 'none',
+      duration: 3000
+    })
 
-  componentDidShow () { }
+    this.props.dispatchHome().then(() => {
+      this.setState({ loaded: true })
+    })
+  }
 
-  componentDidHide () { }
+  render() {
+    if (!this.state.loaded) {
+      return <div>我在加载哈。。。</div>
+    }
 
-  render () {
+    const { homeInfo } = this.props
     return (
-      <View className='index'>
-        <Button className='add_btn' onClick={this.props.add}>+</Button>
-        <Button className='dec_btn' onClick={this.props.dec}>-</Button>
-        <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button>
-        <View><Text>{this.props.counter.num}</Text></View>
-        <View><Text>Hello, World</Text></View>
-        <Clock></Clock>
+      <View className="home">
+        我是首页
+        <Loading />
       </View>
     )
   }
