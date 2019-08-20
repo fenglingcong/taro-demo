@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro'
-import { Text } from '@tarojs/components'
+import { View } from '@tarojs/components'
 
 import './index.scss'
 
@@ -28,7 +28,9 @@ class Clock extends Component {
 
   render () {
     return (
-      <Text>现在时间是：{this.state.date.toLocaleTimeString()}</Text>
+      <View className="clock-wrap">
+        现在时间是：{this.state.date.toLocaleTimeString()}
+      </View>
     )
   }
 }

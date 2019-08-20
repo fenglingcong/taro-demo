@@ -1,0 +1,25 @@
+
+@import '@styles/theme.scss';
+
+.search {
+  &-wrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 56px;
+    border: 1px solid #333;
+    @include hairline(border-width);
+    border-radius: 28px;
+  }
+  &-icon{
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+  }
+  &-text{
+    color: $text-color-light;
+    font-size: 28px;
+  }
+}

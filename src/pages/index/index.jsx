@@ -4,6 +4,9 @@ import { connect } from '@tarojs/redux'
 import * as actions from '../../actions/home'
 import './index.scss'
 import Loading from '@components/loading'
+import Clock from './clock'
+import SearchInput from './search'
+import Banner from './banner'
 
 const RECOMMEND_SIZE = 20
 
@@ -34,14 +37,15 @@ class Home extends Component {
 
   render() {
     if (!this.state.loaded) {
-      return <div>我在加载哈。。。</div>
+      return <Loading />
     }
 
     const { homeInfo } = this.props
     return (
       <View className="home">
-        我是首页
-        <Loading />
+        <Clock />
+        <SearchInput />
+        <Banner list={homeInfo.focus} />
       </View>
     )
   }
