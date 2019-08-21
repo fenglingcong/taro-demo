@@ -1,0 +1,37 @@
+@import '@styles/theme.scss';
+
+.com-home {
+  &-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 96px;
+
+    &__txt {
+      color: $black;
+      font-weight: bold;
+      font-size: 32px;
+    }
+
+    &__content {
+      flex: 1;
+    }
+
+    &__link {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      &-txt {
+        line-height: 26px;
+        font-size: 26px;
+        color: $text-color-light;
+      }
+      &-img {
+        margin-left: 10px;
+        width: 14px;
+        height: 24px;
+      }
+    }
+  }
+}

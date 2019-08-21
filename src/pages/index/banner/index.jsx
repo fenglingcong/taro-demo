@@ -7,12 +7,12 @@ export default class SwiperBanner extends Component {
     list: []
   }
 
-  render() {
+  render () {
     const { list } = this.props;
     return (
-      <View className="home-banner">
+      <View className='home-banner'>
         <Swiper
-          className="home-banner__swiper"
+          className='home-banner__swiper'
           circular
           autoplay
           indicatorDots
@@ -20,9 +20,9 @@ export default class SwiperBanner extends Component {
           {list.map(item => (
             <SwiperItem
               key={item.rank}
-              className="home-banner__swiper-item">
+              className='home-banner__swiper-item'>
               <Image
-                className="home-banner__swiper-item-img"
+                className='home-banner__swiper-item-img'
                 src={item.img} />
             </SwiperItem>
           ))}

@@ -28,8 +28,8 @@ class Clock extends Component {
 
   render () {
     return (
-      <View className="clock-wrap">
-        现在时间是：{this.state.date.toLocaleTimeString()}
+      <View className='clock-wrap'>
+        {this.state.date.toLocaleTimeString()}
       </View>
     )
   }
