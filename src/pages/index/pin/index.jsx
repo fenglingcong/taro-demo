@@ -32,14 +32,14 @@ export default class Pin extends Component {
         <View className='home-pin__wrap'>
           <Swiper
             className='home-pin__swiper'
-            autoplay
+            // autoplay
             indicatorDots
             indicatorActiveColor='rgb(178, 42, 49)'
           >
             {list.map((group, index) => (
               <SwiperItem
                 key={index}
-                className='hom-pin__swiper-item'
+                className='home-pin__swiper-item'
               >
                 {group.map(item => (
                   <View key={item.id}
