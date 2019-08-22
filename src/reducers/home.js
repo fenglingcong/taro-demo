@@ -37,7 +37,7 @@ export default function home(state = INITIAL_STATE, action) {
     case HOME_RECOMMEND: {
       return {
         ...state,
-        recommend: state.recommend.contact(action.payload.ecmdItemList)
+        recommend: state.recommend.concat(action.payload.rcmdItemList)
       }
     }
     default:

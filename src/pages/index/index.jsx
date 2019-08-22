@@ -10,11 +10,12 @@ import SearchInput from './search'
 import Banner from './banner'
 import Policy from './policy'
 import Pin from './pin'
+import Recommend from './recommend'
 
 const RECOMMEND_SIZE = 20
 
 @connect(state => state.home, { ...actions })
-class Home extends Component {
+export default class Home extends Component {
   config = {
     navigationBarTitleText: '首页'
   }
@@ -37,7 +38,7 @@ class Home extends Component {
       this.setState({ loaded: true })
     })
     this.props.dispatchPin({ orderType: 4, size: 12})
-    // this.loadRecommend()
+    this.loadRecommend()
   }
 
   loadRecommend = () => {
@@ -67,7 +68,7 @@ class Home extends Component {
       return <Loading />
     }
 
-    const { homeInfo, pin } = this.props
+    const { homeInfo, pin, recommend } = this.props
     return (
       <View className='home'>
         <Clock />
@@ -83,10 +84,9 @@ class Home extends Component {
             banner={homeInfo.newUserExclusive}
             list={pin}
           />
+          <Recommend list={recommend} />
         </ScrollView>
       </View>
     )
   }
 }
-
-export default Home

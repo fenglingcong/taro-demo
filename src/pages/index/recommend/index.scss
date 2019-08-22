@@ -1,0 +1,20 @@
+@import '@styles/theme.scss';
+
+.recommend {
+  &-title {
+    &__txt {
+      font-size: 28px;
+    }
+  }
+  &-list {
+    &__item {
+      &-img {
+        width: 330px;
+        height: 330px;
+      }
+      &-desc {
+        width: 330px;
+      }
+    }
+  }
+}
