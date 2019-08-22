@@ -1,0 +1,17 @@
+@import '@styles/theme.scss';
+
+.tag {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+
+  &-txt {
+    padding: 6px 18px;
+    background: #e37b7d;
+    border-radius: 2px;
+    line-height: 24px;
+    font-weight: 200;
+    font-size: 24px;
+    color: #fff;
+  }
+}
