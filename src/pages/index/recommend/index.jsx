@@ -48,6 +48,38 @@ export default class Recommend extends Component {
                   {!!categoryItem.limitedTag &&
                     <Tag text={categoryItem.limitedTag} />
                   }
+
+                  <Text
+                    className='recommend-list__item-name'
+                    numberOfLines={1}>
+                      {categoryItem.name}
+                  </Text>
+
+                  <View className='recommend-list__item-price-wrap'>
+                    <Text className='recommend-list__item-price'>
+                      ￥{categoryItem.activityPrice || categoryItem.retailPrice}
+                    </Text>
+                    {!!categoryItem.activityPrice &&
+                      <Text className='recommend-list__item-price--origin'>
+                        ￥{categoryItem.retailPrice}
+                      </Text>
+                    }
+                  </View>
+
+                  {!!(categoryItem.comments &&
+                    categoryItem.comments[0] &&
+                    categoryItem.comments[0].content) &&
+                    <View className='recommend-list__item-comment'>
+                      <Image               className='recommend-list__item-comment-img'
+                      src={categoryItem.comments[0].frontUserAvatar || defaultAvatar}
+                      />
+                      <Text
+                        className='recommend-list__item-comment-txt'
+                        numberOfLines={2}>
+                        {categoryItem.comments[0].content}
+                      </Text>
+                    </View>
+                  }
                 </View>
               </View>
             )
