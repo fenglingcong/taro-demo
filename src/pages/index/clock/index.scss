@@ -1,14 +1,14 @@
 .clock {
   &-wrap{
     position: fixed;
-    top: 5px;
+    top: 0;
     right: 30px;
     z-index: 99;
     padding: 0 10px;
-    height: 80px;
-    border-radius: 10px;
+    height: 56px;
+    border-radius: 56px;
     background: rgba(0, 0, 0, 0.6);
-    line-height: 80px;
+    line-height: 56px;
     text-align: center;
     font-size: 24px;
     color: #fff;

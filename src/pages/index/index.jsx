@@ -37,6 +37,9 @@ export default class Home extends Component {
     this.props.dispatchHome().then(() => {
       this.setState({ loaded: true })
     })
+    this.props.dispatchSearchCount().then(() => {
+      console.log('调用成功了')
+    });
     this.props.dispatchPin({ orderType: 4, size: 12})
     this.loadRecommend()
   }
@@ -65,14 +68,14 @@ export default class Home extends Component {
 
   render () {
     if (!this.state.loaded) {
-      return <Loading />
+      return <Loading loaded={true} />
     }
 
-    const { homeInfo, pin, recommend } = this.props
+    const { homeInfo, searchCount, pin, recommend } = this.props
     return (
       <View className='home'>
         <Clock />
-        <SearchInput />
+        <SearchInput count={searchCount} />
         <ScrollView
           scrollY
           className='home__wrap'
@@ -86,6 +89,8 @@ export default class Home extends Component {
           />
           <Recommend list={recommend} />
         </ScrollView>
+        {this.state.loading && <Loading loading={true} />}
+        {!this.state.hasMore && <Loading hasMore={true} />}
       </View>
     )
   }

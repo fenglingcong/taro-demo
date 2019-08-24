@@ -1,4 +1,8 @@
-.index {
-  flex-direction: column;
-  width: 100%;
+.home {
+  position: relative;
+
+  &__wrap {
+    padding: 76px 0 0;
+    background: #fafafa;
+  }
 }

@@ -13,12 +13,15 @@ class SearchInput extends Component {
   }
   
   render () {
+    const { count } = this.props;
     return (
-      <View className='search-wrap' onClick={this.clickGoodsSearch}>
-        <Image className='search-icon' src={searchIcon} />
-        <Text className='search-text'>
-          {`搜索商品，共${searchCount}款好物`}
-        </Text>
+      <View className='search'>
+        <View className='search-wrap' onClick={this.clickGoodsSearch}>
+          <Image className='search-icon' src={searchIcon} />
+          <Text className='search-text'>
+            {`搜索商品，共${count}款好物`}
+          </Text>
+        </View>
       </View>
     )
   }
