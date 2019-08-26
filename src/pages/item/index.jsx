@@ -4,7 +4,10 @@ import './index.scss'
 import { connect } from '@tarojs/redux';
 import * as actions from '@actions/item'
 import Gallery from './gallery'
-
+import Detail from './detail'
+import InfoBase from './info-base'
+import InfoParam from './info-param'
+console.log(InfoParam)
 @connect(state => state.item, { ...actions })
 export default class Item extends Component {
   config = {
@@ -41,12 +44,13 @@ export default class Item extends Component {
       itemDetail.picUrl3,
       itemDetail.picUrl4,
     ]
-    console.log(this.props)
+
     return (
       <View>
-        我是详情页
         {gallery.length > 0 && <Gallery list={gallery} />}
-        {JSON.stringify(itemInfo)}
+        <InfoBase data={itemInfo} />
+        {/* <InfoParam /> */}
+        <Detail html={itemDetail.detailHtml} />
       </View>
     )
   }

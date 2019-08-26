@@ -1,0 +1,113 @@
+@import "@styles/theme.scss";
+
+.info-base {
+  padding: 40px 30px;
+  background: $white;
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &-wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-name {
+      line-height: 34px;
+      font-size: 30px;
+      font-weight: bold;
+      color: $black;
+    }
+
+    &-desc {
+      margin-top: 14px;
+      line-height: 32px;
+      font-size: 28px;
+      color: $text-color-lighter;
+    }
+
+    &-star {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 22px;
+
+      &-txt {
+        line-height: 32px;
+        font-weight: bold;
+        font-size: 32px;
+        color: $primary-color;
+      }
+
+      &-link {
+        margin-top: 12px;
+        line-height: 24px;
+        font-size: 24px;
+        color: $text-color-lighter;
+      }
+    }
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 50px;
+    
+    &-symbol {
+      padding-top: 8px;
+      line-height: 24px;
+      font-size: 24px;
+      color: $primary-color;
+    }
+
+    &-txt {
+      line-height: 38px;
+      font-size: 38px;
+      color: $primary-color;
+    }
+
+    &-origin {
+      margin-left: 18px;
+      padding-top: 10px;
+      line-height: 24px;
+      font-size: 24px;
+      color: $text-color-lighter;
+    }
+  }
+
+  &__tag {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 28px;
+
+    &-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-right: 12px;
+      padding: 0 10px;
+      height: 38px;
+      border: 1px solid #f28e3d;
+      border-radius: 6px;
+      @include hairline(border-width);
+
+      @include eject(border-width, 1px);
+
+      &-txt {
+        font-size: 24px;
+        color: #f28e3d;
+      }
+
+      &-img {
+        margin-left: 8px;
+        width: 13px;
+        height: 24px;
+      }
+    }
+  }
+}
