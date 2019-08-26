@@ -7,7 +7,9 @@ import Gallery from './gallery'
 import Detail from './detail'
 import InfoBase from './info-base'
 import InfoParam from './info-param'
-console.log(InfoParam)
+import Spec from './spec'
+import Footer from './footer'
+
 @connect(state => state.item, { ...actions })
 export default class Item extends Component {
   config = {
@@ -49,7 +51,9 @@ export default class Item extends Component {
       <View>
         {gallery.length > 0 && <Gallery list={gallery} />}
         <InfoBase data={itemInfo} />
-        {/* <InfoParam /> */}
+        <Footer />
+        <InfoParam />
+        <Spec />
         <Detail html={itemDetail.detailHtml} />
       </View>
     )
