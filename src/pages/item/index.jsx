@@ -52,7 +52,7 @@ export default class Item extends Component {
         {gallery.length > 0 && <Gallery list={gallery} />}
         <InfoBase data={itemInfo} />
         <Footer />
-        <InfoParam />
+        <InfoParam list={itemInfo.attrList} />
         <Spec />
         <Detail html={itemDetail.detailHtml} />
       </View>

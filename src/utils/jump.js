@@ -2,11 +2,10 @@
  * @Author: fenglingcong 
  * @Date: 2019-08-17 20:58:52 
  * @Last Modified by: fenglingcong
- * @Last Modified time: 2019-08-17 21:18:29
+ * @Last Modified time: 2019-08-27 19:02:34
  * 对跳转的统一处理 webview huo 微信小程序
  */
 import Taro from '@tarojs/taro'
-import { all } from 'when';
 
 const PAGE_WEBVIEW = ''
 
