@@ -10,7 +10,7 @@ import './index.scss'
 const NAV_LIST = [{
   key: 'home',
   img: homeIcon,
-  url: '/pages/home/home'
+  url: '/pages/index/index'
 }, {
   key: 'service',
   img: serviceIcon,
@@ -25,9 +25,42 @@ export default class Footer extends Component {
     onAdd: () => {}
   }
 
+  handleNav = (item) => {
+    if (item.key === 'service') {
+      Taro.showToast({
+        title: '未完成功能',
+        icon: 'none'
+      })
+    } else {
+      jump({ url: item.url, method: 'switchTab'})
+    }
+  }
+
+  handleBuy = () => {
+    Taro.showToast({
+      title: '暂时只支持加入购物车',
+      icon: 'none'
+    })
+  }
+
   render() {
     return (
-      <View>
+      <View className='item-footer'>
+        {NAV_LIST.map(item => (
+          <View
+            key={item.key}
+            className='item-footer__nav'
+            onClick={this.handleNav.bind(this, item)}
+          >
+            <Image
+              className='item-footer__nav-img'
+              src={item.img}
+            />
+          </View>
+        ))}
+        <View className='item-footer__buy' onClick={this.handleBuy}>
+          <Text className='item-footer__buy-txt'>立即购买</Text>
+        </View>
         <ButtonItem
           type='primary'
           text='加入购物车'
