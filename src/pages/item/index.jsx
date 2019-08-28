@@ -1,7 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, ScrollView } from '@tarojs/components'
-import { Popup, Loading } from '@components'
 import { connect } from '@tarojs/redux'
+import { Popup, Loading } from '@components'
 import * as actions from '@actions/item'
 import { getWindowHeight } from '@utils/style'
 import Gallery from './gallery'
@@ -88,7 +88,6 @@ class Item extends Component {
           {gallery.length && <Gallery list={gallery} />}
           <InfoBase data={itemInfo} />
           <InfoParam list={itemInfo.attrList} />
-          <Spec />
           <Detail html={itemDetail.detailHtml} />
         </ScrollView>
 
@@ -97,7 +96,7 @@ class Item extends Component {
           onClose={this.toggleVisible}
           compStyle={popupStyle}
         >
-          哇哈哈哈
+          <Spec />
         </Popup>
 
         <View className='item__footer'>

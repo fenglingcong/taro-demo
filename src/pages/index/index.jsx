@@ -1,25 +1,21 @@
-import Taro, { Component } from '@tarojs/taro'
-import { View, Text, Image, ScrollView } from '@tarojs/components'
-import { connect } from '@tarojs/redux'
-import * as actions from '../../actions/home'
-import './index.scss'
 import { getWindowHeight } from '@utils/style'
 import { Loading } from '@components'
+import Taro, { Component } from '@tarojs/taro'
+import { View, ScrollView } from '@tarojs/components'
+import { connect } from '@tarojs/redux'
+import * as actions from '../../actions/home'
 import Clock from './clock'
 import SearchInput from './search'
 import Banner from './banner'
 import Policy from './policy'
 import Pin from './pin'
 import Recommend from './recommend'
+import './index.scss'
 
 const RECOMMEND_SIZE = 20
 
 @connect(state => state.home, { ...actions })
 export default class Home extends Component {
-  config = {
-    navigationBarTitleText: '首页'
-  }
-
   state = {
     loaded: false,
     loading: false,
@@ -42,6 +38,10 @@ export default class Home extends Component {
     });
     this.props.dispatchPin({ orderType: 4, size: 12})
     this.loadRecommend()
+  }
+
+  config = {
+    navigationBarTitleText: '首页'
   }
 
   loadRecommend = () => {
@@ -68,7 +68,7 @@ export default class Home extends Component {
 
   render () {
     if (!this.state.loaded) {
-      return <Loading loaded={true} />
+      return <Loading loaded />
     }
 
     const { homeInfo, searchCount, pin, recommend } = this.props

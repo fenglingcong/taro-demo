@@ -18,6 +18,8 @@ const store = configStore()
 
 class App extends Component {
 
+  componentDidMount () {}
+  
   config = {
     pages: [
       'pages/index/index',
@@ -62,7 +64,6 @@ class App extends Component {
     }
   }
 
-  componentDidMount () {}
 
   componentDidShow () {}
 
