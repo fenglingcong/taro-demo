@@ -1,0 +1,91 @@
+@import '@styles/theme.scss';
+
+.item-spec {
+  padding: 30px 30px 90px;
+
+  &__info {
+    display: flex;
+    flex-direction: row;
+
+    &-img {
+      margin-right: 21px;
+      width: 180px;
+      height: 180px;
+      background: #fafafa;
+      border-radius: $border-radius;
+    }
+
+    &-wrap {
+      display: flex;
+      flex-direction: column;
+      padding-top: 92px;
+    }
+
+    &-price {
+      display: flex;
+      flex-direction: row;
+
+      &-txt {
+        margin-right: 20px;
+        line-height: 28px;
+        font-size: 28px;
+        color: $primary-color;
+      }
+
+      &-origin {
+        line-height: 28px;
+        font-size: 28px;
+        color: $text-color-lighter;
+        text-decoration: line-through;
+        text-decoration-color: $text-color-lighter;
+      }
+    }
+
+    &-tip {
+      margin-top: 20px;
+      line-height: 28px;
+      font-size: 28px;
+      color: $text-color;
+    }
+  }
+
+  &__group {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+
+    &-title {
+      line-height: 28px;
+      font-size: 28px;
+      color: $text-color;
+    }
+
+    &-list {
+      display: flex;
+      font-display: row;
+      flex-wrap: wrap;
+      
+      &-item {
+        margin: 20px 30px 0 0;
+        padding: 0 26px;
+        height: 70px;
+        line-height: 68px;
+        font-size: 24px;
+        color: $text-color;
+        border: 1px solid $text-color-lighter;
+        border-radius: $border-radius;
+        @include eject(border-width, 1px);
+
+        &--active {
+          border-color: $primary-color;
+          color: $primary-color;
+        }
+
+        &--disabled {
+          border-color: $text-color-lighter;
+          color: $text-color-lighter;
+        }
+      }
+    }
+  }
+}
