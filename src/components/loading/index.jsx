@@ -2,10 +2,10 @@
  * @Author: fenglingcong 
  * @Date: 2019-08-20 11:35:37 
  * @Last Modified by: fenglingcong
- * @Last Modified time: 2019-08-24 20:01:29
+ * @Last Modified time: 2019-09-28 21:00:47
  */
 import Taro, { Component } from '@tarojs/taro'
-import { View, Image } from '@tarojs/components'
+import { View, Image, Text } from '@tarojs/components'
 import loadingIcon from './assets/loading.gif'
 import './index.scss'
 

@@ -1,0 +1,22 @@
+@import '@styles/theme.scss';
+
+.user-login {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 240px 40px 0;
+  background-color: #ffffff;
+
+  &__reg {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 56px;
+
+    &-txt {
+      line-height: 28px;
+      font-size: 28px;
+      color: $text-color;
+    }
+  }
+}

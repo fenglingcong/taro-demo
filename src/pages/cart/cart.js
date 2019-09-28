@@ -2,6 +2,8 @@ import Taro, { Component } from '@tarojs/taro'
 import { View } from '@tarojs/components'
 import { ButtonItem, Loading } from '@components'
 
+import './cart.scss'
+
 class Cart extends Component {
   state = {
     loading: false,
@@ -10,6 +12,12 @@ class Cart extends Component {
 
   config = {
     navigationBarTitleText: '购物车'
+  }
+
+  toLogin () {
+    Taro.navigateTo({
+      url: '/pages/login/login'
+    })
   }
   
   render () {

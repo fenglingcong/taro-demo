@@ -28,7 +28,8 @@ class App extends Component {
       'pages/user/user',
       'pages/search/search',
       'pages/item/index',
-      'pages/login/login'
+      'pages/login/login',
+      'pages/login-email/login-email'
     ],
     window: {
       backgroundTextStyle: 'light',
